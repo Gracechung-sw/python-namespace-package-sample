@@ -117,10 +117,23 @@ python3 example.py
 
 Result:
 
-b module
-common log
-b module analyzer
+b module  
+common log  
+b module analyzer  
 a module
+
+# PyPI server
+
+If you want to use PyPI server and upload these packages,  
+see [[Python] Private PyPI Server 세팅 및 upload and install packages](https://libertegrace.tistory.com/entry/Python-Private-PyPI-Server-%EC%84%B8%ED%8C%85-%EB%B0%8F-upload-and-install-packages)
+
+Start PyPI server using docker-compose.yml file.
+
+```
+$ docker-compose up -d --build
+```
+
+and go localhost:8080
 
 ## Reference
 

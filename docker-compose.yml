@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  pypi-server:
+    image: pypiserver/pypiserver:latest # We defined a single service called pypi-server that uses the pypiserver Docker image.
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: /Users/grace/Study/my-pypi-server/auth # We defined a bind mount to mount the "/home/ec2-user/pypi/auth" folder (where the .htpasswd file resides) on the host to "/data/auth" inside the container.
+        target: /data/auth
+      - type: volume
+        source: pypi-server # We also defined a named volume called pypi-server that maps to the "/data/packages" folder in the container. If the container goes down for whatever reason, the volume and uploaded PyPI packages will persist.
+        target: /data/packages
+    # We also updated the command so that the /data/auth/.htpasswd is used as the password file (-P /data/auth/.htpasswd) and the update, download, and list commands require authentication (-a update,download,list).
+    command: -P /data/auth/.htpasswd -a update,download,list /data/packages # The -P . -a . allows unauthorized access and /data/packages indicates that packages will be served from the "/data/packages" folder in the container.
+    restart: always
+
+volumes:
+  pypi-server:
