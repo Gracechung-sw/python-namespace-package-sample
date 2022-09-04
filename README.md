@@ -47,30 +47,30 @@ from myutils import b
 
 Namespace packages allow you to split the sub-packages and modules within a single package across multiple, separate distribution packages (referred to as distributions in this document to avoid ambiguity). For example, if you have the following package structure:
 
-📦python-namespace-package-sample
-┣ 📂a_module_pkg
-┃ ┣ 📂mynamespace
-┃ ┃ ┗ 📂a_module
-┃ ┃ ┃ ┣ 📂AI
-┃ ┃ ┃ ┃ ┗ 📜analyze.py
-┃ ┃ ┃ ┗ 📜**init**.py
-┃ ┗ 📜setup.py
-┣ 📂b_module_pkg
-┃ ┣ 📂mynamespace
-┃ ┃ ┗ 📂b_module
-┃ ┃ ┃ ┣ 📂AI
-┃ ┃ ┃ ┃ ┣ 📜**init**.py
-┃ ┃ ┃ ┃ ┗ 📜analyze.py
-┃ ┃ ┃ ┗ 📜**init**.py
-┃ ┗ 📜setup.py
-┣ 📂common_pkg
-┃ ┣ 📂mynamespace
-┃ ┃ ┗ 📂common
-┃ ┃ ┃ ┣ 📂types
-┃ ┃ ┃ ┃ ┗ 📜**init**.py
-┃ ┃ ┃ ┣ 📜**init**.py
-┃ ┃ ┃ ┣ 📜exception.py
-┃ ┃ ┃ ┗ 📜log.py
+📦python-namespace-package-sample  
+┣ 📂a_module_pkg  
+┃ ┣ 📂mynamespace  
+┃ ┃ ┗ 📂a_module  
+┃ ┃ ┃ ┣ 📂AI  
+┃ ┃ ┃ ┃ ┗ 📜analyze.py  
+┃ ┃ ┃ ┗ 📜**init**.py  
+┃ ┗ 📜setup.py  
+┣ 📂b_module_pkg  
+┃ ┣ 📂mynamespace  
+┃ ┃ ┗ 📂b_module  
+┃ ┃ ┃ ┣ 📂AI  
+┃ ┃ ┃ ┃ ┣ 📜**init**.py  
+┃ ┃ ┃ ┃ ┗ 📜analyze.py  
+┃ ┃ ┃ ┗ 📜**init**.py  
+┃ ┗ 📜setup.py  
+┣ 📂common_pkg  
+┃ ┣ 📂mynamespace  
+┃ ┃ ┗ 📂common  
+┃ ┃ ┃ ┣ 📂types  
+┃ ┃ ┃ ┃ ┗ 📜**init**.py  
+┃ ┃ ┃ ┣ 📜**init**.py  
+┃ ┃ ┃ ┣ 📜exception.py  
+┃ ┃ ┃ ┗ 📜log.py  
 ┃ ┗ 📜setup.py
 
 Then you can break these sub-packages into two separate distributions:
@@ -78,21 +78,21 @@ Each sub-package can now be separately installed, used, and versioned.
 Delivery of individual modules without needing all parts of a large project.
 Reuse of package names which may not normally be available.
 
-📦mynamespace
-┣ 📂a_module
-┃ ┣ 📂AI
-┃ ┃ ┗ 📜analyze.py
-┃ ┗ 📜**init**.py
-┣ 📂b_module
-┃ ┣ 📂AI
-┃ ┃ ┣ 📜**init**.py
-┃ ┃ ┗ 📜analyze.py
-┃ ┗ 📜**init**.py
-┗ 📂common
-┃ ┣ 📂types
-┃ ┃ ┗ 📜**init**.py
-┃ ┣ 📜**init**.py
-┃ ┣ 📜exception.py
+📦mynamespace  
+┣ 📂a_module  
+┃ ┣ 📂AI  
+┃ ┃ ┗ 📜analyze.py  
+┃ ┗ 📜**init**.py  
+┣ 📂b_module  
+┃ ┣ 📂AI  
+┃ ┃ ┣ 📜**init**.py  
+┃ ┃ ┗ 📜analyze.py  
+┃ ┗ 📜**init**.py  
+┗ 📂common  
+┃ ┣ 📂types  
+┃ ┃ ┗ 📜**init**.py  
+┃ ┣ 📜**init**.py  
+┃ ┣ 📜exception.py  
 ┃ ┗ 📜log.py
 
 From the root directory, running the following command will install a package
