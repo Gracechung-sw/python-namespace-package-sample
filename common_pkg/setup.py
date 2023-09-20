@@ -2,7 +2,7 @@ from setuptools import setup, find_namespace_packages
 
 setup(
     name='common_pkg',
-    version='0.1',
+    version='latest',
     description='common AI analyzer utils',
     url='',
     author='Gracechung-sw',

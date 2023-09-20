@@ -2,7 +2,7 @@ from setuptools import setup, find_namespace_packages
 
 setup(
     name='a_module_pkg',
-    version='0.1',
+    version='a_module-v0.1-hjchung0919',
     description='a AI model',
     url='',
     author='Gracechung-sw',
